@@ -1,0 +1,192 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ejs
+    </title>
+
+</head>
+
+<body> -->
+    <form class="el-form demo-form-inline el-form--inline"><span class="span">*</span>
+        <div class="el-form-item"><label class="el-form-item__label">编码名称</label>
+            <div class="el-form-item__content">
+                <div class="el-input"><input type="text" autocomplete="off" placeholder="编码名称" class="el-input__inner" id="name">
+                </div>
+            </div>
+        </div> <span class="span">*</span>
+        <div class="el-form-item"><label class="el-form-item__label">编码类型</label>
+            <div class="el-form-item__content">
+                <div class="el-input"><input type="text" autocomplete="off" placeholder="编码类型" class="el-input__inner" id="type">
+                </div>
+            </div>
+        </div> <span class="span">*</span>
+        <div class="el-form-item"><label class="el-form-item__label">其他编码</label>
+            <div class="el-form-item__content">
+                <div class="el-input"><input type="text" autocomplete="off" placeholder="其他编码" class="el-input__inner" id="other">
+                </div>
+            </div>
+        </div>
+        <div class="el-form-item"><label class="el-form-item__label">编码说明</label>
+            <div class="el-form-item__content">
+                <div class="el-input"><input type="text" autocomplete="off" placeholder="编码说明" class="el-input__inner" id="code">
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="el-form demo-form-inline el-form--inline">
+        <div class="el-form-item">
+            <div class="el-form-item__content"><button type="button" class="el-button btn el-button--primary querys"><span class="querys">查询</span></button>
+            </div>
+        </div>
+        <div class="el-form-item">
+            <div class="el-form-item__content"><button type="button" class="el-button btn el-button--success add"><span class="add">添加</span></button>
+            </div>
+        </div>
+    </form>
+    <div class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition" style="width: 100%;">
+        <div class="hidden-columns">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="el-table__header-wrapper">
+            <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 1074px;">
+                <colgroup>
+                    <col name="el-table_2_column_9" width="107">
+                    <col name="el-table_2_column_10" width="220">
+                    <col name="el-table_2_column_11" width="220">
+                    <col name="el-table_2_column_12" width="220">
+                    <col name="el-table_2_column_13" width="190">
+                    <col name="el-table_2_column_14" width="157">
+                    <col name="gutter" width="0">
+                </colgroup>
+                <thead class="has-gutter">
+                    <tr class="">
+                        <th colspan="1" rowspan="1" class="el-table_2_column_9  is-center   is-leaf">
+                            <div class="cell">序号</div>
+                        </th>
+                        <th colspan="1" rowspan="1" class="el-table_2_column_10  is-center   is-leaf">
+                            <div class="cell">编码名称</div>
+                        </th>
+                        <th colspan="1" rowspan="1" class="el-table_2_column_11  is-center   is-leaf">
+                            <div class="cell">编码类型</div>
+                        </th>
+                        <th colspan="1" rowspan="1" class="el-table_2_column_12  is-center   is-leaf">
+                            <div class="cell">值</div>
+                        </th>
+                        <th colspan="1" rowspan="1" class="el-table_2_column_13  is-center   is-leaf">
+                            <div class="cell">其他编码</div>
+                        </th>
+                        <th colspan="1" rowspan="1" class="el-table_2_column_14  is-center   is-leaf">
+                            <div class="cell">操作列</div>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="el-table__body-wrapper is-scrolling-none">
+            <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 1074px;">
+                <colgroup>
+                    <col name="el-table_2_column_9" width="107">
+                    <col name="el-table_2_column_10" width="220">
+                    <col name="el-table_2_column_11" width="220">
+                    <col name="el-table_2_column_12" width="220">
+                    <col name="el-table_2_column_13" width="190">
+                    <col name="el-table_2_column_14" width="157">
+                </colgroup>
+                <tbody class="tbody-list">
+                    <% for(var i = 0; i < data.length; i++) {%>
+                        <tr class="el-table__row">
+                            <td rowspan="1" colspan="1" class="el-table_2_column_9 is-center ">
+                                <div class="cell">
+                                    <div>
+                                        <%-i+1%>
+                                    </div>
+                                </div>
+                            </td>
+                            <td rowspan="1" colspan="1" class="el-table_2_column_10 is-center ">
+                                <div class="cell">
+                                    <%-data[i].codeName%>
+                                </div>
+                            </td>
+                            <td rowspan="1" colspan="1" class="el-table_2_column_11 is-center ">
+                                <div class="cell">
+                                    <%-data[i].codeType%>
+                                </div>
+                            </td>
+                            <td rowspan="1" colspan="1" class="el-table_2_column_12 is-center ">
+                                <div class="cell">
+                                    <%-data[i].code%>
+                                </div>
+                            </td>
+                            <td rowspan="1" colspan="1" class="el-table_2_column_13 is-center ">
+                                <div class="cell">
+                                    <%-data[i].otherSign%>
+                                </div>
+                            </td>
+                            <td rowspan="1" colspan="1" class="el-table_2_column_14 is-center ztable">
+                                <div class="cell"><button type="button" class="el-button el-button--default el-button--mini edits"><i class="el-icon-edit edits-icon"></i></button> <button type="button" class="el-button el-button--default el-button--mini deletes"><i class="el-icon-delete deletes-icon"></i></button></div>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="el-table__column-resize-proxy" style="display: none;"></div>
+    </div>
+</div>
+
+<div data-v-26f07020="" class="el-dialog__wrapper" style="z-index: 2001;display: none;">
+    <div role="dialog" aria-modal="true" aria-label="增加" class="el-dialog" style="margin-top: 15vh;">
+        <div class="el-dialog__header"><span class="el-dialog__title">增加</span><button type="button" aria-label="Close" class="el-dialog__headerbtn zclose"><i class="el-dialog__close el-icon el-icon-close zclose"></i></button></div>
+        <div class="el-dialog__body">
+            <form data-v-26f07020="" class="el-form">
+                <div data-v-26f07020="" class="el-form-item itemLabel"><label class="el-form-item__label" style="width: 12rem;margin-bottom: 20px;">编码类型</label>
+                    <div class="el-form-item__content" style="margin-left: 12rem;">
+                        <div data-v-26f07020="" class="itemInput el-input">
+                            <input type="text" autocomplete="off" placeholder="编码类型" class="el-input__inner codeType">
+                        </div>
+                    </div>
+                </div>
+                <div data-v-26f07020="" class="el-form-item"><label class="el-form-item__label" style="width: 12rem;margin-bottom: 20px;">编码名称</label>
+                    <div class="el-form-item__content" style="margin-left: 12rem;">
+                        <div data-v-26f07020="" class="el-input">
+                            <input type="text" autocomplete="off" placeholder="编码名称" class="el-input__inner codeName">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div data-v-26f07020="" class="el-form-item"><label class="el-form-item__label" style="width: 12rem;">编码说明</label>
+                    <div class="el-form-item__content" style="margin-left: 12rem;">
+                        <div data-v-26f07020="" class="el-input">
+                            <input type="text" autocomplete="off" placeholder="编码说明" class="el-input__inner code">
+                        </div>
+                    </div>
+                </div> -->
+                <div data-v-26f07020="" class="el-form-item"><label class="el-form-item__label" style="width: 12rem;margin-bottom: 20px;">其他编码</label>
+                    <div class="el-form-item__content" style="margin-left: 12rem;">
+                        <div data-v-26f07020="" class="el-input">
+                            <!----><input type="text" autocomplete="off" placeholder="其他编码" class="el-input__inner other">
+                        </div>
+                    </div>
+                </div>
+                <div data-v-26f07020="" class="el-form-item"><label class="el-form-item__label" style="width: 12rem;margin-bottom: 20px;">值</label>
+                    <div class="el-form-item__content" style="margin-left: 12rem;">
+                        <div data-v-26f07020="" class="el-input">
+                            <input type="text" autocomplete="off" placeholder="值" class="el-input__inner codeValue">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="el-dialog__footer">
+            <div data-v-26f07020="" class="dialog-footer"><button data-v-26f07020="" type="button" class="el-button el-button--default zclose"><span class="zclose">取 消</span></button> <button data-v-26f07020="" type="button" class="el-button el-button--primary submit"><span class="submit">确 定</span></button></div>
+        </div>
+    </div>
+<!-- </body>
+
+</html> -->

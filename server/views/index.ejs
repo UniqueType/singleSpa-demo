@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        ejs
+    </title>
+    <!-- <link rel="stylesheet" href="../public/stylesheets/style.css" /> -->
+</head>
+
+<body>
+    <ul>
+        <% for(var i = 0; i < data.length; i++) {%>
+        <li>
+            <%-data[i].ManageCom %>
+        </li>
+        <% } %>
+    </ul>
+</body>
+
+</html>
